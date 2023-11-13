@@ -1,12 +1,25 @@
-function Button() {
-  return <button>Click me!</button>
+function Button({
+  label = "default",
+  id,
+  whenButtonIsClicked: whenClicked,
+  deeecode = 1000,
+  children
+}) {
+  if (whenClicked) {
+    whenClicked()
+  }
+
+  // deeecode
+
+  return (
+    <button id={id}>
+      {/* {label}
+      {deeecode} */}
+      {children}
+    </button>
+  )
 }
 
-function sum(num1, num2) {
-  return num1 + num2
-}
-
-sum(10, 50)
-sum(100, 1000)
+// Button({})
 
 export default Button

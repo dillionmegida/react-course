@@ -3,17 +3,32 @@ import Button from "./components/Button"
 import Heading from "./components/Heading"
 
 function App() {
+  function printDeeecode() {
+    console.log("deeecode")
+  }
+
   return (
     <div>
-      <Button />
-      <Button />
+      <Button
+        whenButtonIsClicked={printDeeecode}
+        label="Click Me!"
+        id="special" 
+        deeecode={50}
+      />
+      <Button label="Submit" id="something-else">
+            Closing something
+        </Button>
       <h2>Hello</h2>
-      <Heading />
+      <Heading items={[1, 2, 3]} />
+      <Button label="Hello!" id="how-are-you" />
       <Button />
-      <Button />
-      <Button />
+      <Button label="Yoyo" />
       <h3>How are you</h3>
-      <Heading />
+      <Heading items={["hello", "hi"]} />
+      <Button>
+        <p>Hello</p>
+        <Heading />
+      </Button>
     </div>
   )
 }

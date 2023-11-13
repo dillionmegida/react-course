@@ -1,4 +1,4 @@
-function Heading() {
+function Heading({ items }) {
   return (
     <div>
       <h2>Hi</h2>
