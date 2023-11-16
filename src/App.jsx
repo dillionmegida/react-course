@@ -1,6 +1,6 @@
-import "./App.css"
-import Button from "./components/Button"
-import Heading from "./components/Heading"
+import styles from "./App.module.css"
+import Button from "./components/Button/Button"
+import Heading from "./components/Heading/Heading"
 
 function App() {
   function printDeeecode() {
@@ -18,7 +18,7 @@ function App() {
       <Button label="Submit" id="something-else">
             Closing something
         </Button>
-      <h2>Hello</h2>
+      <h2 className={styles.heading}>Hello</h2>
       <Heading items={[1, 2, 3]} />
       <Button label="Hello!" id="how-are-you" />
       <Button />

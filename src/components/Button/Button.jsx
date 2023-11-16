@@ -1,9 +1,11 @@
+import styles from "./Button.module.css"
+
 function Button({
   label = "default",
   id,
   whenButtonIsClicked: whenClicked,
   deeecode = 1000,
-  children
+  children,
 }) {
   if (whenClicked) {
     whenClicked()
@@ -12,10 +14,11 @@ function Button({
   // deeecode
 
   return (
-    <button id={id}>
-      {/* {label}
-      {deeecode} */}
-      {children}
+    <button
+      className={`${styles["my-button"]} bg-green}`}
+      id={id}
+    >
+      {label}
     </button>
   )
 }

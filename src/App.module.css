@@ -1,0 +1,10 @@
+.heading {
+  color: blue;
+  font-size: 8rem;
+}
+
+@media (max-width: 500px) {
+    .heading {
+        font-size: 3rem;
+    }
+}
