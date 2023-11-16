@@ -1,10 +1,5 @@
-.heading {
-  color: blue;
-  font-size: 8rem;
-}
-
-@media (max-width: 500px) {
-    .heading {
-        font-size: 3rem;
-    }
+.prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
