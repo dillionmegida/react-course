@@ -1,5 +1,29 @@
+.bg {
+  background-color: #496ca1;
+  padding: 50px;
+  height: 500px;
+  text-align: center;
+}
+
+.heading, .description {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.heading {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.2rem;
+}
+
 .prices {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  position: relative;
+  top: -300px;
+  align-items: center;
 }

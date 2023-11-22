@@ -1,15 +1,32 @@
 .card {
-  max-width: 280px;
+  max-width: 500px;
   background-color: white;
-  border-radius: 3px;
+  border-radius: 5px;
+  --padding-y: 40px;
+  box-shadow: 0px 0px 20px
+    color-mix(in srgb, black, transparent 80%);
+}
+
+.card--startup {
+  --price-theme: #5a5679;
+  --price-theme-darker: #241f46;
+}
+
+.card--pro {
   --price-theme: #f3847e;
   --price-theme-darker: #d43533;
+  --padding-y: 70px;
+}
+
+.card--enterprise {
+  --price-theme: #47b8e0;
+  --price-theme-darker: #1378d5;
 }
 
 .card__wrapper {
   width: 90%;
   margin: 0 auto;
-  padding: 40px 10px;
+  padding: var(--padding-y) 10px;
 }
 
 .card__label {
@@ -75,7 +92,7 @@
   margin-right: 6px;
 }
 
-.card__button {
+.card .card__button {
   text-transform: uppercase;
   padding: 15px;
   background-color: var(--price-theme);
@@ -84,4 +101,7 @@
   border: 2px solid var(--price-theme-darker);
   border-radius: 3px;
   margin-top: 20px;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
 }

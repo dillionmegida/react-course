@@ -3,8 +3,6 @@
 }
 
 body {
-  background-color: #333;
-  padding: 20px;
   margin: 0;
   color: white;
   font-family: Poppins;
@@ -51,4 +49,10 @@ ul {
 
 .bg-green {
   background-color: green;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
 }

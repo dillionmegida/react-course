@@ -1,10 +1,6 @@
 import PricingCard from "./components/PricingCard/PricingCard"
 import styles from "./App.module.css"
 
-// const arr = [1,2,3,4]
-// const newArr = arr.filter(num => num !== 1)
-// // [2,3,4]
-
 function App() {
   const cards = [
     {
@@ -44,28 +40,30 @@ function App() {
   ]
 
   return (
-    <div className={styles.prices}>
-      {/* {[
-        { id: "hello", value: "Hello" },
-        { id: "hi", value: "Hi how are you" },
-        { id: "num1", value: 6 },
-        { id: "num2", value: 9 },
-      ].map(item => {
-        return <p key={item.id}>{item.value}</p>
-      })} */}
-      {cards.map(card => {
-        return (
-          <PricingCard
-            key={card.label}
-            label={card.label}
-            price={card.price}
-            image={card.image}
-            imageAlt={card.imageAlt}
-            benefits={card.benefits}
-          />
-        )
-      })}
-    </div>
+    <main>
+      <div className={styles.bg}>
+        <h1 className={styles.heading}>Choose your plan</h1>
+        <p className={styles.description}>
+          Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Nulla maximus leo quam,
+          nec feugiat metus tincidunt id.
+        </p>
+      </div>
+      <div className={`${styles.prices} container`}>
+        {cards.map(card => {
+          return (
+            <PricingCard
+              key={card.label}
+              label={card.label}
+              price={card.price}
+              image={card.image}
+              imageAlt={card.imageAlt}
+              benefits={card.benefits}
+            />
+          )
+        })}
+      </div>
+    </main>
   )
 }
 
