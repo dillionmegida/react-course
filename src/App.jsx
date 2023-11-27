@@ -2,6 +2,8 @@ import PricingCard from "./components/PricingCard/PricingCard"
 import styles from "./App.module.css"
 
 function App() {
+  const showPricingCards = true
+
   const cards = [
     {
       label: "Start-Up",
@@ -42,27 +44,34 @@ function App() {
   return (
     <main>
       <div className={styles.bg}>
-        <h1 className={styles.heading}>Choose your plan</h1>
+        <h1 className={styles.heading}>
+          Choose your plan
+        </h1>
         <p className={styles.description}>
           Lorem ipsum dolor sit amet, consectetur
           adipiscing elit. Nulla maximus leo quam,
           nec feugiat metus tincidunt id.
         </p>
       </div>
-      <div className={`${styles.prices} container`}>
-        {cards.map(card => {
-          return (
-            <PricingCard
-              key={card.label}
-              label={card.label}
-              price={card.price}
-              image={card.image}
-              imageAlt={card.imageAlt}
-              benefits={card.benefits}
-            />
-          )
-        })}
-      </div>
+      {showPricingCards && (
+        <div
+          className={`${styles.prices} container`}
+        >
+          {cards.map(card => {
+            return (
+              <PricingCard
+                key={card.label}
+                label={card.label}
+                price={card.price}
+                image={card.image}
+                duration={card.duration}
+                imageAlt={card.imageAlt}
+                benefits={card.benefits}
+              />
+            )
+          })}
+        </div>
+      )}
     </main>
   )
 }

@@ -27,3 +27,9 @@
   top: -300px;
   align-items: center;
 }
+
+.nothing {
+  color: black;
+  font-size: 4rem;
+  text-align: center;
+}

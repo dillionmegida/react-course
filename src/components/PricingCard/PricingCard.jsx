@@ -4,7 +4,7 @@ import Button from "../Button/Button"
 export default function PricingCard({
   label,
   price,
-  duration = "",
+  duration,
   image,
   imageAlt,
   benefits,
@@ -40,13 +40,15 @@ export default function PricingCard({
           >
             {price}
           </span>
-          <span
-            className={
-              styles["card__price-duration"]
-            }
-          >
-            {duration}
-          </span>
+          {duration && (
+            <span
+              className={
+                styles["card__price-duration"]
+              }
+            >
+              {duration}
+            </span>
+          )}
         </div>
         <span
           className={
