@@ -61,12 +61,7 @@ function App() {
             return (
               <PricingCard
                 key={card.label}
-                label={card.label}
-                price={card.price}
-                image={card.image}
-                duration={card.duration}
-                imageAlt={card.imageAlt}
-                benefits={card.benefits}
+                card={card}
               />
             )
           })}

@@ -1,6 +1,7 @@
 import styles from "./Button.module.css"
+import PropTypes from 'prop-types'
 
-export default function Button({
+function Button({
   className,
   children,
 }) {
@@ -12,3 +13,10 @@ export default function Button({
     </button>
   )
 }
+
+Button.propTypes = {
+  className: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
+}
+
+export default Button
