@@ -79,7 +79,12 @@ function PricingCard({ card }) {
             )
           })}
         </ul>
-        <Button className={styles.card__button}>
+        <Button
+          whenButtonIsClicked={function () {
+            alert(card.label)
+          }}
+          className={styles.card__button}
+        >
           Choose
         </Button>
       </div>
