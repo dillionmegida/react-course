@@ -24,7 +24,7 @@ function Button({
       // onClick={doSomething}
       className={`${styles.button} ${className}`}
     >
-      {children}
+      → {children}
     </button>
   )
 }
