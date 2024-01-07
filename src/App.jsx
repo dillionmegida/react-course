@@ -1,8 +1,20 @@
 import PricingCard from "./components/PricingCard/PricingCard"
 import styles from "./App.module.css"
+import { useState } from "react"
 
 function App() {
-  const showPricingCards = true
+  const [showPricingCards, setShowPricingCards] = useState(true)
+  const [showHeading, setShowHeading] = useState(true)
+
+  const updateShowPricingCards = () => {
+    setShowPricingCards(!showPricingCards)
+  }
+  
+  const updateShowHeading =() => {
+    setShowHeading(!showHeading)
+  }
+
+  console.log("i am rendered")
 
   const cards = [
     {
@@ -44,15 +56,23 @@ function App() {
   return (
     <main>
       <div className={styles.bg}>
-        <h1 className={styles.heading}>
-          Choose your plan
-        </h1>
+        {showHeading && (
+          <h1 className={styles.heading}>
+            Choose your plan
+          </h1>
+        )}
         <p className={styles.description}>
           Lorem ipsum dolor sit amet, consectetur
           adipiscing elit. Nulla maximus leo quam,
           nec feugiat metus tincidunt id.
         </p>
       </div>
+      <button onClick={updateShowPricingCards}>
+        Update Show Pricing Cards
+      </button>
+      <button onClick={updateShowHeading}>
+        Update Show Heading
+      </button>
       {showPricingCards && (
         <div
           className={`${styles.prices} container`}
