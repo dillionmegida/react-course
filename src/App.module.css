@@ -19,6 +19,21 @@
   font-size: 1.2rem;
 }
 
+.update-buttons {
+  position: relative;
+  top: -300px;
+}
+
+.update-button {
+  display: block;
+  border: none;
+  padding: 20px 30px;
+  background-color: lightgreen;
+  margin-bottom: 20px;
+  width: 230px;
+  margin: 20px auto;
+}
+
 .prices {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
