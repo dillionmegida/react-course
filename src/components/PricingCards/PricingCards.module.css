@@ -1,0 +1,21 @@
+.prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+  top: -250px;
+  align-items: center;
+}
+
+.randomize-btn {
+  position: absolute;
+  top: -60px;
+  font-size: 50px;
+  background: none;
+  border: none;
+  color: white;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  outline: none;
+}

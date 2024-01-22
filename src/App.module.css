@@ -34,15 +34,6 @@
   margin: 20px auto;
 }
 
-.prices {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  position: relative;
-  top: -300px;
-  align-items: center;
-}
-
 .nothing {
   color: black;
   font-size: 4rem;
