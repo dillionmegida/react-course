@@ -26,6 +26,11 @@ ul {
   list-style: none;
 }
 
+button {
+  border: none;
+  background: none;
+}
+
 .flex {
   display: flex;
 }

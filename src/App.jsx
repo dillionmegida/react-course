@@ -1,19 +1,11 @@
 import PricingCards from "./components/PricingCards/PricingCards"
 import styles from "./App.module.css"
 import { useState } from "react"
+import UseEffectExamples from "./components/UseEffectExamples/UseEffectExamples"
 
 function App() {
   const [showPricingCards, setShowPricingCards] = useState(true)
   const [showHeading, setShowHeading] = useState(true)
-
-  // const updateShowPricingCards = () => {
-  //   setShowPricingCards(!showPricingCards) // batch/queue the update
-  //   console.log(showPricingCards)
-  // }
-
-  // const updateShowHeading = () => {
-  //   setShowHeading(!showHeading) // batch/queue the update
-  // }
 
   const updateStates = () => {
     setShowPricingCards(!showPricingCards) // queue for next render
@@ -59,7 +51,7 @@ function App() {
 
   return (
     <main>
-      <div className={styles.bg}>
+      {/* <div className={styles.bg}>
         {showHeading && (
           <h1 className={styles.heading}>Choose your plan</h1>
         )}
@@ -77,7 +69,8 @@ function App() {
           Update States
         </button>
       </div>
-      {showPricingCards && <PricingCards cards={cards} />}
+      {showPricingCards && <PricingCards cards={cards} />} */}
+      <UseEffectExamples showHeading={showHeading} />
     </main>
   )
 }

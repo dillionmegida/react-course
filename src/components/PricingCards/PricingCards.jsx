@@ -2,16 +2,7 @@ import styles from "./PricingCards.module.css"
 import PropTypes from "prop-types"
 import PricingCard from "../PricingCard/PricingCard"
 import { useState, useEffect, useRef } from "react"
-
-const randomizeArr = array => {
-  const cloned = [...array]
-  for (let i = cloned.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[cloned[i], cloned[j]] = [cloned[j], cloned[i]]
-  }
-
-  return cloned
-}
+import { randomizeArr } from "../../helpers/array"
 
 function PricingCards({ cards }) {
   const [randomCards, setRandomCards] = useState(
@@ -26,25 +17,23 @@ function PricingCards({ cards }) {
 
   useEffect(() => {
     if (isMountedRef.current) {
-      console.log("i am updated")
+      // console.log("i am updated")
     }
   }, [randomCards])
 
   useEffect(() => {
-    console.log("i am born")
+    // console.log("i am born")
     isMountedRef.current = true
 
-    const intervalId = setInterval(() => {
-      console.log("hello hi hello")
-    }, 1000)
+    // const intervalId = setInterval(() => {
+    //   console.log("hello hi hello")
+    // }, 1000)
 
-    return () => {
-      console.log("cleaning up")
-      clearInterval(intervalId)
-    }
+    // return () => {
+    //   console.log("cleaning up")
+    //   clearInterval(intervalId)
+    // }
   }, [])
-
-  
 
   return (
     <div className={`${styles.prices} container`}>
