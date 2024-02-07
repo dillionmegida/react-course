@@ -11,29 +11,37 @@ function PricingCards({ cards }) {
 
   const randomizeCards = () => {
     setRandomCards(randomizeArr(randomCards))
+    // setRandomCards([...randomCards]) // updating with same data
   }
 
-  const isMountedRef = useRef(false)
+  // const isMountedRef = useRef(false)
+
+  // useEffect(() => {
+  //   if (isMountedRef.current) {
+  //     // console.log("i am updated")
+  //   }
+  // }, [randomCards])
+
+  // useEffect(() => {
+  //   // console.log("i am born")
+  //   isMountedRef.current = true
+
+  //   // const intervalId = setInterval(() => {
+  //   //   console.log("hello hi hello")
+  //   // }, 1000)
+
+  //   // return () => {
+  //   //   console.log("cleaning up")
+  //   //   clearInterval(intervalId)
+  //   // }
+  // }, [])
 
   useEffect(() => {
-    if (isMountedRef.current) {
-      // console.log("i am updated")
-    }
-  }, [randomCards])
+    console.log('use effect')
+  }, [randomCards]) // array, object type
 
-  useEffect(() => {
-    // console.log("i am born")
-    isMountedRef.current = true
-
-    // const intervalId = setInterval(() => {
-    //   console.log("hello hi hello")
-    // }, 1000)
-
-    // return () => {
-    //   console.log("cleaning up")
-    //   clearInterval(intervalId)
-    // }
-  }, [])
+  // {name: 'deeecode'} !== {name: 'deeecode'}
+  // [...] !== [...]
 
   return (
     <div className={`${styles.prices} container`}>

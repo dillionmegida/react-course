@@ -30,7 +30,7 @@ export default function UseEffectExamples() {
       .then(response => response.json())
       .then(json => {
         setData(json)
-        console.log(json)
+        // console.log(json)
       })
 
     // cleaup function

@@ -51,7 +51,7 @@ function App() {
 
   return (
     <main>
-      {/* <div className={styles.bg}>
+      <div className={styles.bg}>
         {showHeading && (
           <h1 className={styles.heading}>Choose your plan</h1>
         )}
@@ -69,7 +69,7 @@ function App() {
           Update States
         </button>
       </div>
-      {showPricingCards && <PricingCards cards={cards} />} */}
+      {showPricingCards && <PricingCards cards={cards} />}
       <UseEffectExamples showHeading={showHeading} />
     </main>
   )
