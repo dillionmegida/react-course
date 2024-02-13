@@ -6,10 +6,13 @@ import UseEffectExamples from "./components/UseEffectExamples/UseEffectExamples"
 function App() {
   const [showPricingCards, setShowPricingCards] = useState(true)
   const [showHeading, setShowHeading] = useState(true)
+  const [showUseEffectComp, setShowUseEffectComp] =
+    useState(true)
 
   const updateStates = () => {
-    setShowPricingCards(!showPricingCards) // queue for next render
-    setShowHeading(!showHeading) // queue for next render
+    // setShowPricingCards(!showPricingCards) // queue for next render
+    // setShowHeading(!showHeading) // queue for next render
+    setShowUseEffectComp(!showUseEffectComp)
   }
 
   const cards = [
@@ -69,8 +72,10 @@ function App() {
           Update States
         </button>
       </div>
-      {showPricingCards && <PricingCards cards={cards} />}
-      <UseEffectExamples showHeading={showHeading} />
+      {/* {showPricingCards && <PricingCards cards={cards} />} */}
+      {showUseEffectComp && (
+        <UseEffectExamples showHeading={showHeading} />
+      )}
     </main>
   )
 }

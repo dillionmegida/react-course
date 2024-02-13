@@ -21,6 +21,29 @@ export default function UseEffectExamples() {
   useEffect(() => {
     const btnElem = document.getElementById("my-btn")
     // console.log(btnElem)
+
+    btnElem.addEventListener('click', () => {
+      // something
+    })
+
+    // start websocket
+
+    // setTimeout
+
+    // const intervalId = setInterval(() => {
+    //   console.log('interval')
+    // }, 1000)
+
+    return () => {
+      // cleanup function
+      // called when component is unmounted
+      // clearInterval(intervalId)
+      btnElem.removeEventListener('click', () => {
+        // something
+      })
+
+      // close websocket
+    }
   }, []) // on mount
 
   useEffect(() => {
@@ -33,7 +56,12 @@ export default function UseEffectExamples() {
         // console.log(json)
       })
 
-    // cleaup function
+    // return () => {
+    //   // cleanup function
+    //   // called when the component is unmounted
+    //   // called before the next render
+    //   console.log('cleanup', randomColor)
+    // }
   }, [randomColor]) // why?
 
   return (
