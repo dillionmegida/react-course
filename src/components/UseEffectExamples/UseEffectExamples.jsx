@@ -1,68 +1,53 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import styles from "./UseEffectExamples.module.css"
 import { randomizeArr } from "../../helpers/array"
 
 const colors = ["#333", "brown", "purple"]
 
-// function print(firstname) {
-//   function sum(num1, num2) {
-//     return num1 + num2
-//   }
-
-//   sum(10, 20)
-//   console.log(firstname) // side effect, browser api
-// }
-
 export default function UseEffectExamples() {
   const [showBox, setShowBox] = useState(true)
   const [randomColor, setRandomColor] = useState(colors[0])
   const [data, setData] = useState(null)
+  const isMountedRef = useRef(false)
+  const [count, setCount] = useState(0)
+  const toggleBoxRef = useRef(null)
 
   useEffect(() => {
-    const btnElem = document.getElementById("my-btn")
-    // console.log(btnElem)
-
-    btnElem.addEventListener('click', () => {
-      // something
-    })
-
-    // start websocket
-
-    // setTimeout
-
-    // const intervalId = setInterval(() => {
-    //   console.log('interval')
-    // }, 1000)
-
-    return () => {
-      // cleanup function
-      // called when component is unmounted
-      // clearInterval(intervalId)
-      btnElem.removeEventListener('click', () => {
-        // something
-      })
-
-      // close websocket
+    if(isMountedRef.current) {
+      console.log('updated')
+  
+      fetch(
+        `https://jsonplaceholder.typicode.com/todos?randomColor=${randomColor}`
+      )
+        .then(response => response.json())
+        .then(json => {
+          setData(json)
+        })
     }
+  }, [randomColor]) // why?
+
+  useEffect(() => {
+    console.log('mounted')
+    isMountedRef.current = true
+
+    console.log(toggleBoxRef.current.innerHTML)
+
+    toggleBoxRef.current.addEventListener('click', () => {
+      console.log('i was clicked')
+    })
   }, []) // on mount
 
-  useEffect(() => {
-    fetch(
-      `https://jsonplaceholder.typicode.com/todos?randomColor=${randomColor}`
-    )
-      .then(response => response.json())
-      .then(json => {
-        setData(json)
-        // console.log(json)
-      })
+  const intervalRef = useRef(null)
 
-    // return () => {
-    //   // cleanup function
-    //   // called when the component is unmounted
-    //   // called before the next render
-    //   console.log('cleanup', randomColor)
-    // }
-  }, [randomColor]) // why?
+  function startInterval() {
+    intervalRef.current = setInterval(() => {
+      setCount(count => count + 1)
+    }, 1000)
+  }
+
+  function stopInterval() {
+    clearInterval(intervalRef.current)
+  }
 
   return (
     <section
@@ -74,10 +59,11 @@ export default function UseEffectExamples() {
       <h1>useEffect Examples</h1>
       {showBox && <div className={styles.block}></div>}
       <button
-        onClick={() => {
-          setShowBox(!showBox)
-        }}
+        // onClick={() => {
+        //   setShowBox(!showBox)
+        // }}
         id="my-btn"
+        ref={toggleBoxRef}
         className={styles.btn}
       >
         Toggle Box
@@ -87,11 +73,23 @@ export default function UseEffectExamples() {
           const randomColor = randomizeArr(colors)[0]
           setRandomColor(randomColor)
         }}
-        id="my-btn"
         className={styles.btn}
       >
         Randomize Color
       </button>
+      <button
+        onClick={startInterval}
+        className={styles.btn}
+      >
+        Start Interval
+      </button>
+      <button
+        onClick={stopInterval}
+        className={styles.btn}
+      >
+        Stop Interval
+      </button>
+      <h2>{count}</h2>
       {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
     </section>
   )
