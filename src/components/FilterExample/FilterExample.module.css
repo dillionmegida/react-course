@@ -1,0 +1,50 @@
+.filter {
+  color: black;
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.filter h2 {
+  font-size: 50px;
+}
+
+.toggle {
+  background-color: orange;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.colors {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.colors button {
+  padding: 20px 40px;
+  background-color: #333;
+  color: white;
+}
+
+.people {
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.person {
+  border: 1px solid #333;
+  padding: 20px;
+}
+
+.person-name {
+  display: block;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.person-color {
+  color: #aaa;
+  margin-right: 10px;
+}
