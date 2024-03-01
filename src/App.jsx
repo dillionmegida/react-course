@@ -1,6 +1,6 @@
 import PricingCards from "./components/PricingCards/PricingCards"
 import styles from "./App.module.css"
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import UseEffectExamples from "./components/UseEffectExamples/UseEffectExamples"
 import MemoExample from "./components/MemoExample/MemoExample"
 
@@ -9,6 +9,9 @@ function App() {
   const [showHeading, setShowHeading] = useState(true)
   const [showUseEffectComp, setShowUseEffectComp] =
     useState(true)
+  const [selected, setSelected] = useState("pro")
+
+  // setSelected()
 
   const updateStates = () => {
     // setShowPricingCards(!showPricingCards) // queue for next render
@@ -16,48 +19,57 @@ function App() {
     setShowUseEffectComp(!showUseEffectComp)
   }
 
-  const cards = [
-    {
-      label: "Start-Up",
-      price: "Free",
-      image: "/images/bike.png",
-      imageAlt: "Moving bicycle with clouds",
-      benefits: [
-        "Unlimited Downloads",
-        "Email Support",
-        "Limited Access",
-      ],
-    },
-    {
-      label: "Pro",
-      price: "49$",
-      duration: "/Year",
-      image: "/images/car.png",
-      imageAlt: "Moving car with clouds",
-      benefits: [
-        "Upto 10 Users",
-        "Email Support, Call Support",
-        "1 Year Access",
-      ],
-    },
-    {
-      label: "Enterprise",
-      price: "99$",
-      image: "/images/plane.png",
-      imageAlt: "Flying plane with clouds",
-      benefits: [
-        "Unlimited Access",
-        "On demand request",
-        "Lifetime Access",
-      ],
-    },
-  ]
+  const cards = useMemo(() => {
+    return [
+      {
+        label: "Start-Up",
+        selected: selected === "start-up",
+        price: "Free",
+        image: "/images/bike.png",
+        imageAlt: "Moving bicycle with clouds",
+        benefits: [
+          "Unlimited Downloads",
+          "Email Support",
+          "Limited Access",
+        ],
+      },
+      {
+        label: "Pro",
+        selected: selected === "pro",
+        price: "49$",
+        duration: "/Year",
+        image: "/images/car.png",
+        imageAlt: "Moving car with clouds",
+        benefits: [
+          "Upto 10 Users",
+          "Email Support, Call Support",
+          "1 Year Access",
+        ],
+      },
+      {
+        label: "Enterprise",
+        selected: selected === "enterprise",
+        price: "99$",
+        image: "/images/plane.png",
+        imageAlt: "Flying plane with clouds",
+        benefits: [
+          "Unlimited Access",
+          "On demand request",
+          "Lifetime Access",
+        ],
+      },
+    ]
+  }, [selected])
+
+  // {} !== {} - ref
+  // ["deeecode"] !== ["deeecode"] - ref
 
   return (
     <main>
       <MemoExample
         showPricingCards={showPricingCards}
         showHeading={showHeading}
+        cards={cards}
       />
       <div className={styles.bg}>
         {showHeading && (

@@ -96,6 +96,7 @@ PricingCard.propTypes = {
   card: PropTypes.exact({
     label: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
+    selected: PropTypes.bool.isRequired,
     duration: PropTypes.string,
     image: PropTypes.string.isRequired,
     imageAlt: PropTypes.string.isRequired,

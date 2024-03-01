@@ -37,7 +37,7 @@ function PricingCards({ cards }) {
   // }, [])
 
   useEffect(() => {
-    console.log('use effect')
+    // console.log('use effect')
   }, [randomCards]) // array, object type
 
   // {name: 'deeecode'} !== {name: 'deeecode'}
@@ -124,6 +124,7 @@ PricingCards.propTypes = {
     PropTypes.exact({
       label: PropTypes.string.isRequired,
       price: PropTypes.string.isRequired,
+      selected: PropTypes.bool.isRequired,
       duration: PropTypes.string,
       image: PropTypes.string.isRequired,
       imageAlt: PropTypes.string.isRequired,
