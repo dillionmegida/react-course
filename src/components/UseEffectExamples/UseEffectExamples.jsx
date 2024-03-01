@@ -14,7 +14,7 @@ export default function UseEffectExamples() {
 
   useEffect(() => {
     if(isMountedRef.current) {
-      console.log('updated')
+      // console.log('updated')
   
       fetch(
         `https://jsonplaceholder.typicode.com/todos?randomColor=${randomColor}`
@@ -27,10 +27,10 @@ export default function UseEffectExamples() {
   }, [randomColor]) // why?
 
   useEffect(() => {
-    console.log('mounted')
+    // console.log('mounted')
     isMountedRef.current = true
 
-    console.log(toggleBoxRef.current.innerHTML)
+    // console.log(toggleBoxRef.current.innerHTML)
 
     toggleBoxRef.current.addEventListener('click', () => {
       console.log('i was clicked')

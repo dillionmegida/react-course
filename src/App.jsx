@@ -2,6 +2,7 @@ import PricingCards from "./components/PricingCards/PricingCards"
 import styles from "./App.module.css"
 import { useState } from "react"
 import UseEffectExamples from "./components/UseEffectExamples/UseEffectExamples"
+import MemoExample from "./components/MemoExample/MemoExample"
 
 function App() {
   const [showPricingCards, setShowPricingCards] = useState(true)
@@ -54,6 +55,10 @@ function App() {
 
   return (
     <main>
+      <MemoExample
+        showPricingCards={showPricingCards}
+        showHeading={showHeading}
+      />
       <div className={styles.bg}>
         {showHeading && (
           <h1 className={styles.heading}>Choose your plan</h1>
@@ -72,7 +77,7 @@ function App() {
           Update States
         </button>
       </div>
-      {/* {showPricingCards && <PricingCards cards={cards} />} */}
+      {showPricingCards && <PricingCards cards={cards} />}
       {showUseEffectComp && (
         <UseEffectExamples showHeading={showHeading} />
       )}
