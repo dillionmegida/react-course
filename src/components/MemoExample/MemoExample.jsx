@@ -5,9 +5,10 @@ import { randomizeArr } from "../../helpers/array"
 
 const colors = ["lightgreen", "#aaa", "yellow", "orange"]
 
-const MemoizedMemoExample = memo(function MemoExample({
+function MemoExample({
   showHeading,
   showPricingCards,
+  onChangeColor
 }) {
   // assume that this component does a lot of computation
 
@@ -39,17 +40,21 @@ const MemoizedMemoExample = memo(function MemoExample({
       <button
         onClick={() => {
           setColor(randomizeArr(colors)[0])
+          onChangeColor()
         }}
       >
         Change Color
       </button>
     </div>
   )
-})
+}
 
-MemoizedMemoExample.propTypes = {
+MemoExample.propTypes = {
   showHeading: PropTypes.bool.isRequired,
   showPricingCards: PropTypes.bool.isRequired,
+  onChangeColor: PropTypes.func.isRequired
 }
+
+const MemoizedMemoExample = memo(MemoExample)
 
 export default MemoizedMemoExample

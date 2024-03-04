@@ -1,6 +1,6 @@
 import PricingCards from "./components/PricingCards/PricingCards"
 import styles from "./App.module.css"
-import { useState, useMemo } from "react"
+import { useState, useMemo, useCallback } from "react"
 import UseEffectExamples from "./components/UseEffectExamples/UseEffectExamples"
 import MemoExample from "./components/MemoExample/MemoExample"
 
@@ -61,6 +61,11 @@ function App() {
     ]
   }, [selected])
 
+  const onChangeColor = () => {
+    console.log('color has changed')
+    // console.log('selected card is ' + selected)
+  }
+
   // {} !== {} - ref
   // ["deeecode"] !== ["deeecode"] - ref
 
@@ -70,6 +75,7 @@ function App() {
         showPricingCards={showPricingCards}
         showHeading={showHeading}
         cards={cards}
+        onChangeColor={onChangeColor}
       />
       <div className={styles.bg}>
         {showHeading && (
