@@ -3,6 +3,7 @@ import styles from "./App.module.css"
 import { useState, useMemo, useCallback } from "react"
 import UseEffectExamples from "./components/UseEffectExamples/UseEffectExamples"
 import MemoExample from "./components/MemoExample/MemoExample"
+import ForwardRefExample from "./components/ForwardRefExample/ForwardRefExample"
 
 function App() {
   const [showPricingCards, setShowPricingCards] = useState(true)
@@ -71,7 +72,8 @@ function App() {
 
   return (
     <main>
-      <MemoExample
+      <ForwardRefExample />
+      {/* <MemoExample
         showPricingCards={showPricingCards}
         showHeading={showHeading}
         cards={cards}
@@ -98,7 +100,7 @@ function App() {
       {showPricingCards && <PricingCards cards={cards} />}
       {showUseEffectComp && (
         <UseEffectExamples showHeading={showHeading} />
-      )}
+      )} */}
     </main>
   )
 }

@@ -1,0 +1,29 @@
+.section {
+  width:80%;
+  padding: 40px;
+  margin: 40px auto;
+  border: 5px solid #f0f0f0;
+}
+
+.section video {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.actions button {
+  padding: 10px 20px;
+  border: none;
+}
+
+.play {
+  background-color: lightgreen;
+}
+
+.pause {
+  background-color: lightcoral;
+}
