@@ -1,41 +1,18 @@
-.bg {
-  background-color: #496ca1;
-  padding: 50px;
-  height: 500px;
+.main {
+  color: white;
+}
+
+.main h1 {
   text-align: center;
+  font-size: clamp(1.5rem, 7vw, 3rem);
 }
 
-.heading, .description {
-  max-width: 550px;
-  margin: 0 auto;
-}
-
-.heading {
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.description {
-  font-size: 1.2rem;
-}
-
-.update-buttons {
-  position: relative;
-  top: -300px;
-}
-
-.update-button {
-  display: block;
-  border: none;
-  padding: 20px 30px;
-  background-color: lightgreen;
-  margin-bottom: 20px;
-  width: 230px;
-  margin: 20px auto;
-}
-
-.nothing {
-  color: black;
-  font-size: 4rem;
+.main p {
   text-align: center;
+  font-size: clamp(1.2rem, 7vw, 1.7rem);
+}
+
+.main img {
+  margin: 20px 0;
+  border: 2px solid white;
 }

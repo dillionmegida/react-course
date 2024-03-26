@@ -1,11 +1,14 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
   color: white;
   font-family: Poppins;
+  background-color: #5f5b6a;
 }
 
 button {
@@ -58,6 +61,6 @@ button {
 
 .container {
   max-width: 1000px;
-  padding: 20px;
+  padding: 20px 40px;
   margin: 0 auto;
 }
